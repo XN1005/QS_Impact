@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://17msdsu1ooyd"]
+
+[ext_resource type="Script" uid="uid://or4xvhteo0wt" path="res://Weapons/w_1_shotgun.gd" id="1_3cgs0"]
+[ext_resource type="Texture2D" uid="uid://c1xwjdbrgri6s" path="res://Assets/Shotgun_0.png" id="1_xcjxh"]
+[ext_resource type="PackedScene" uid="uid://by6o05kjl0v55" path="res://Weapons/W1_Bullet.tscn" id="2_skn3y"]
+
+[node name="Node2D" type="Node2D" unique_id=1768938732]
+script = ExtResource("1_3cgs0")
+bullet_scene = ExtResource("2_skn3y")
+
+[node name="Timer" type="Timer" parent="." unique_id=1088117666]
+
+[node name="Bullet Spawner" type="Marker2D" parent="." unique_id=1440048062]
+position = Vector2(219, -30)
+
+[node name="Shotgun0" type="Sprite2D" parent="." unique_id=1838151356]
+position = Vector2(86.99999, 33)
+scale = Vector2(0.68958336, 0.68958336)
+texture = ExtResource("1_xcjxh")
+flip_h = true

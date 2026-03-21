@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://by6o05kjl0v55"]
+
+[ext_resource type="Script" uid="uid://nxew86uxx3qg" path="res://Weapons/w_1_bullet.gd" id="1_j2wu8"]
+[ext_resource type="Texture2D" uid="uid://bku0wt5ub85e3" path="res://Assets/BULLET_FROM_PAINT.png" id="1_x8msu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2wu8"]
+size = Vector2(62, 13)
+
+[node name="Bullet" type="Area2D" unique_id=758739834]
+script = ExtResource("1_j2wu8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2029274366]
+
+[node name="Timer" type="Timer" parent="." unique_id=11648442]
+
+[node name="Hitbox (Collision)" type="CollisionShape2D" parent="." unique_id=214557448]
+position = Vector2(6, -1.5)
+shape = SubResource("RectangleShape2D_j2wu8")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1678874827]
+
+[node name="BulletFromPaint" type="Sprite2D" parent="." unique_id=66018881]
+position = Vector2(0, 15)
+texture = ExtResource("1_x8msu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

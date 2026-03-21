@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c3ss7omuw73s3"]
+
+[ext_resource type="Script" uid="uid://3idkjkt4mabm" path="res://Weapons/w_2_standard.gd" id="1_43c3b"]
+[ext_resource type="Texture2D" uid="uid://bja4he1lwwbsj" path="res://Assets/Rifle_0.png" id="1_kutbb"]
+[ext_resource type="PackedScene" uid="uid://flxqin5ts0gt" path="res://Weapons/W2_Bullet.tscn" id="2_hy7ex"]
+
+[node name="Node2D" type="Node2D" unique_id=385477843]
+script = ExtResource("1_43c3b")
+bullet_scene = ExtResource("2_hy7ex")
+
+[node name="Bullet Spawner" type="Marker2D" parent="." unique_id=2011904923]
+position = Vector2(206, -31)
+
+[node name="Sprite2D - Artwork" type="Sprite2D" parent="." unique_id=1033942300]
+
+[node name="Timer - Shoot CD" type="Timer" parent="." unique_id=231155588]
+
+[node name="Rifle0" type="Sprite2D" parent="." unique_id=1056954358]
+position = Vector2(58.000008, -9.000002)
+scale = Vector2(0.1301419, 0.1301419)
+texture = ExtResource("1_kutbb")

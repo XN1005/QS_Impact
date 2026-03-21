@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://flxqin5ts0gt"]
+
+[ext_resource type="Texture2D" uid="uid://bbltspqts4oea" path="res://Assets/Rifle_Bullet.png" id="1_ri66v"]
+[ext_resource type="Script" uid="uid://cw8046lfxpb5d" path="res://Weapons/w_2_bullet.gd" id="1_tm77e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm77e"]
+size = Vector2(36, 10)
+
+[node name="Standard Bullet" type="Area2D" unique_id=1680799299]
+script = ExtResource("1_tm77e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=602156180]
+shape = SubResource("RectangleShape2D_tm77e")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2070301065]
+
+[node name="RifleBullet" type="Sprite2D" parent="." unique_id=894927479]
+scale = Vector2(0.09375001, 0.09375001)
+texture = ExtResource("1_ri66v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
