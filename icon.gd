@@ -11,19 +11,12 @@ extends CharacterBody2D
 # World Stats
 var double_jump = 1
 const gravity = 2000.0
-
-# Miscellaneous
-var can_dash = true
-var is_dashing = false
-var has_control = true
-var direction = 0
-
-func dash(direction):
 # Weapons
 @onready var active_weapon = $W1_Shotgun
 @onready var side_weapon = $W2_Standard
+@onready var player_sprite = $PlayerSprite
 @export var shotgun_cd = 0.6
-@export var rifle_cd = 0.2
+@export var rifle_cd = 0.08
 @export var railgun_cd = 10.0
 @export var switch_weapon_cd = 2.0
 
@@ -33,21 +26,15 @@ var is_dashing = false
 var direction
 var can_shoot = true
 var can_switch = true
+var face_right = 1
 
 func dash():
 	can_dash = false
 	is_dashing = true
-	
-	if direction == 0:
-		direction = 1
 		
 	# no vertical movements while dashing
 	velocity.y = 0
-	velocity.x = dash_speed * direction
-	
-	await get_tree().create_timer(0.2).timeout # Dash for 0.2 seconds
-	is_dashing = false
-
+	velocity.x = dash_speed * face_right
 	await get_tree().create_timer(0.2).timeout
 	is_dashing = false
 	
@@ -60,8 +47,14 @@ func dash():
 	await get_tree().create_timer(0.6).timeout # Wait 0.8 seconds to be able to dash again
 	can_dash = true
 	
-
 func _physics_process(delta: float) -> void:	
+	if direction == -1:
+		face_right = -1
+		player_sprite.flip_h = true
+	elif direction == 1:
+		face_right = 1
+		player_sprite.flip_h = true
+		
 	# ----------------------- MOVEMENTS -----------------------
 	if is_dashing:
 		move_and_slide()
