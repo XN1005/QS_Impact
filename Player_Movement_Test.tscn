@@ -2,11 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://vvk3gxhyonbi" path="res://icon.svg" id="1_41ywu"]
 [ext_resource type="Script" uid="uid://dghop8vltia26" path="res://icon.gd" id="2_0ipxb"]
-<<<<<<< HEAD
-=======
 [ext_resource type="PackedScene" uid="uid://17msdsu1ooyd" path="res://Weapons/W1_Shotgun.tscn" id="3_6jswd"]
 [ext_resource type="PackedScene" uid="uid://c3ss7omuw73s3" path="res://Weapons/W2_Standard.tscn" id="4_bksix"]
->>>>>>> c71cc0a (Player Movement + Weapon update)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ipxb"]
 size = Vector2(108, 102)
@@ -23,12 +20,9 @@ shape = SubResource("RectangleShape2D_0ipxb")
 position = Vector2(1.1920929e-07, 1.9073486e-06)
 scale = Vector2(1.1093749, 1.1093748)
 texture = ExtResource("1_41ywu")
-<<<<<<< HEAD
-=======
 
 [node name="W1_Shotgun" parent="." unique_id=1768938732 instance=ExtResource("3_6jswd")]
 position = Vector2(70, 0)
 
 [node name="W2_Standard" parent="." unique_id=385477843 instance=ExtResource("4_bksix")]
 position = Vector2(69, 6)
->>>>>>> c71cc0a (Player Movement + Weapon update)
