@@ -1,90 +1,92 @@
-[gd_scene format=3 uid="uid://detq8tdq7818t"]
+[gd_scene format=3 uid="uid://c2640f1al8fmo"]
 
-[ext_resource type="Script" uid="uid://ck8wrnwqpvd5m" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="Script" uid="uid://xe7fqgaah0vq" path="res://scripts/death_menu.gd" id="1_latkk"]
 
-[node name="PauseMenu" type="Control" unique_id=657724120]
+[node name="DeathMenu" type="Control" unique_id=389948179]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_n87rw")
+script = ExtResource("1_latkk")
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=43818519]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=927890878]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="." unique_id=1250363240]
+[node name="Label" type="Label" parent="." unique_id=1798621506]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -221.5
-offset_top = -191.5
-offset_right = 225.5
-offset_bottom = -103.5
+offset_left = -56.0
+offset_top = -159.0
+offset_right = 56.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.6392157, 0.34117648, 0, 1)
+theme_override_colors/font_color = Color(0.5286865, 0.06429196, 0, 1)
 theme_override_font_sizes/font_size = 64
-text = "GAME PAUSED"
+text = "GAME OVER"
+metadata/_edit_use_anchors_ = true
 
-[node name="ResumeButton" type="Button" parent="." unique_id=1009887823]
+[node name="RetryButton" type="Button" parent="." unique_id=274137182]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -72.5
+offset_left = -74.5
 offset_top = -48.0
-offset_right = 76.5
+offset_right = 74.5
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.6392157, 0.34117648, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Continue"
+text = "Play Again"
+metadata/_edit_use_anchors_ = true
 
-[node name="MainMenu Button" type="Button" parent="." unique_id=401870982]
+[node name="MainMenu Button" type="Button" parent="." unique_id=1076501696]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -89.0
+offset_left = -91.0
 offset_top = 51.0
-offset_right = 93.0
+offset_right = 91.0
 offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.6392157, 0.34117648, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Main Menu"
+metadata/_edit_use_anchors_ = true
 
-[node name="QuitButton" type="Button" parent="." unique_id=648560414]
+[node name="QuitButton" type="Button" parent="." unique_id=102780158]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4856771
 anchor_top = 0.6203704
 anchor_right = 0.51432294
 anchor_bottom = 0.654321
-offset_left = -19.0
+offset_left = -21.0
 offset_top = 74.0
-offset_right = 23.0
-offset_bottom = 104.99997
+offset_right = 21.0
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.6392157, 0.34117648, 0, 1)
@@ -92,6 +94,6 @@ theme_override_font_sizes/font_size = 32
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="MainMenu Button" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

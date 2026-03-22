@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dm0veie7yp5fu"]
 
+[ext_resource type="Script" uid="uid://lp88fxew05ea" path="res://main_scene.gd" id="1_77cmg"]
 [ext_resource type="PackedScene" uid="uid://p8e8qwgigc2v" path="res://scenes/Player_Movement_Test.tscn" id="1_awche"]
 [ext_resource type="PackedScene" uid="uid://dfhxxn757o3fw" path="res://assets/test_ground.tscn" id="2_qyadn"]
 [ext_resource type="PackedScene" uid="uid://bamdb672knciu" path="res://assets/wall_test.tscn" id="3_ipxtu"]
 [ext_resource type="PackedScene" uid="uid://detq8tdq7818t" path="res://scenes/pause_menu.tscn" id="4_a72qe"]
+[ext_resource type="PackedScene" uid="uid://c2640f1al8fmo" path="res://scenes/death_menu.tscn" id="5_3jhfm"]
 
 [node name="Node2D" type="Node2D" unique_id=1308558507]
+script = ExtResource("1_77cmg")
 
 [node name="CharacterBody2D" parent="." unique_id=720078412 instance=ExtResource("1_awche")]
 position = Vector2(186, 470)
@@ -22,3 +25,5 @@ position = Vector2(234, 276)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2080469048]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=657724120 instance=ExtResource("4_a72qe")]
+
+[node name="DeathMenu" parent="CanvasLayer" unique_id=389948179 instance=ExtResource("5_3jhfm")]

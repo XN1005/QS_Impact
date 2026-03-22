@@ -27,8 +27,8 @@ const gravity = 2000.0
 @export var railgun_cd = 10.0
 @export var switch_weapon_cd = 2.0
 
-# UI
-@onready var pause_menu: Control = $"../CanvasLayer/PauseMenu"
+# die
+signal died
 
 # Miscellaneous
 var can_dash = true
@@ -81,16 +81,10 @@ func take_damage(dmg):
 		die()
 
 func die():
-	print("Game Over!")
+	died.emit()
+	queue_free()
 
 func _physics_process(delta: float) -> void:
-	# Pause Menu
-	if Input.is_action_just_pressed("ui_cancel"):
-		if get_tree().paused:
-			pause_menu.close()
-		else:
-			pause_menu.open()
-			
 	if current_sp < shield:	
 		current_sp += 0.3 * delta
 		sp_bar.value = current_sp
