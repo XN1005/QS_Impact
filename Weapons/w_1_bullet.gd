@@ -9,8 +9,8 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
-	position += transform.x * speed * delta * cos(global_rotation)
-	position += transform.y * speed * delta * sin(global_rotation)
+	position.x += speed * delta * cos(global_rotation)
+	position.y += speed * delta * sin(global_rotation)
 
 func _on_body_entered(body): # Collision
 	queue_free()

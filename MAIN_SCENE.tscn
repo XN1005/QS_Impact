@@ -7,10 +7,13 @@
 [node name="Node2D" type="Node2D" unique_id=1308558507]
 
 [node name="CharacterBody2D" parent="." unique_id=720078412 instance=ExtResource("1_awche")]
-position = Vector2(303, 261)
+position = Vector2(186, 470)
 
 [node name="StaticBody2D" parent="." unique_id=41758239 instance=ExtResource("2_qyadn")]
 position = Vector2(384, 648)
 
 [node name="Wall (Static)" parent="." unique_id=773038739 instance=ExtResource("3_ipxtu")]
 position = Vector2(695, 477)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1609645849]
+position = Vector2(234, 276)

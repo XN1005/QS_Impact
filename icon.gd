@@ -1,17 +1,24 @@
 extends CharacterBody2D
 
 # Base Stats
-@export var health = 5
-@export var shield = 3
+@export var health = 50.0
+@export var shield = 35.0
 @export var speed = 300.0
 @export var dash_speed = 1000.0
 @export var jump_strength = -600.0
 @export var wall_jump_push = 250.0
 
+var current_hp = 50.0
+var current_sp = 35.0
+
 # World Stats
 var double_jump = 1
 const gravity = 2000.0
 # Weapons
+@onready var hp_bar = $HUD/HealthBar
+@onready var hp_display = $HUD/HealthBar/HealthDisplay
+@onready var sp_bar = $HUD/ShieldBar
+@onready var sp_display = $HUD/ShieldBar/ShieldDisplay
 @onready var active_weapon = $W1_Shotgun
 @onready var side_weapon = $W2_Standard
 @onready var player_sprite = $PlayerSprite
@@ -46,14 +53,45 @@ func dash():
 	
 	await get_tree().create_timer(0.6).timeout # Wait 0.8 seconds to be able to dash again
 	can_dash = true
+
+func _ready():
+	# Make sure the health bar matches our variables right when the game boots up
+	hp_bar.max_value = health
+	hp_bar.value = current_hp
+	hp_display.text = "%.1f" % current_hp
 	
-func _physics_process(delta: float) -> void:	
+	sp_bar.max_value = shield
+	sp_bar.value = current_sp
+	sp_display.text = "%.1f" % current_sp
+	# (If you kept your weapon list code in _ready, keep it here too!)
+
+func take_damage(dmg):
+	current_sp -= dmg
+	if current_sp < 0:
+		current_hp += current_sp
+		current_sp = 0
+	
+	hp_bar.value = current_hp # Update
+	hp_display.text = "%.1f" % current_hp # update
+	print("bro got -15 dmg")
+	if current_hp <= 0:
+		die()
+
+func die():
+	print("Game Over!")
+
+func _physics_process(delta: float) -> void:
+	if current_sp < shield:	
+		current_sp += 0.3 * delta
+		sp_bar.value = current_sp
+		sp_display.text = "%.1f" % current_sp
+
 	if direction == -1:
 		face_right = -1
 		player_sprite.flip_h = true
 	elif direction == 1:
 		face_right = 1
-		player_sprite.flip_h = true
+		player_sprite.flip_h = false
 		
 	# ----------------------- MOVEMENTS -----------------------
 	if is_dashing:
@@ -131,3 +169,7 @@ func _physics_process(delta: float) -> void:
 			can_shoot = false
 			await get_tree().create_timer(shotgun_cd).timeout
 			can_shoot = true
+		
+	# ----------------------- DEBUG -----------------------
+	if Input.is_action_just_pressed("15-HP"):
+		take_damage(15.0)
