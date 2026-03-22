@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dgea2m0i1piyu"]
 
-[ext_resource type="PackedScene" uid="uid://p8e8qwgigc2v" path="res://Player_Movement_Test.tscn" id="1_wtcfe"]
-[ext_resource type="PackedScene" uid="uid://dfhxxn757o3fw" path="res://Assets/test_ground.tscn" id="2_0e48y"]
-[ext_resource type="PackedScene" uid="uid://bamdb672knciu" path="res://Assets/wall_test.tscn" id="3_epypp"]
+[ext_resource type="PackedScene" uid="uid://p8e8qwgigc2v" path="res://scenes/Player_Movement_Test.tscn" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://dfhxxn757o3fw" path="res://assets/test_ground.tscn" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://bamdb672knciu" path="res://assets/wall_test.tscn" id="3_epypp"]
 
 [node name="Node2D" type="Node2D" unique_id=1308558507]
 

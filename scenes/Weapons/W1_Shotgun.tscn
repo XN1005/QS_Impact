@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://17msdsu1ooyd"]
 
-[ext_resource type="Script" uid="uid://or4xvhteo0wt" path="res://Weapons/w_1_shotgun.gd" id="1_3cgs0"]
-[ext_resource type="Texture2D" uid="uid://c1xwjdbrgri6s" path="res://Assets/Shotgun_0.png" id="1_xcjxh"]
-[ext_resource type="PackedScene" uid="uid://by6o05kjl0v55" path="res://Weapons/W1_Bullet.tscn" id="2_skn3y"]
+[ext_resource type="Script" uid="uid://or4xvhteo0wt" path="res://scripts/Weapons/w_1_shotgun.gd" id="1_3cgs0"]
+[ext_resource type="Texture2D" uid="uid://c1xwjdbrgri6s" path="res://assets/Shotgun_0.png" id="1_xcjxh"]
+[ext_resource type="PackedScene" uid="uid://by6o05kjl0v55" path="res://scenes/Weapons/W1_Bullet.tscn" id="2_skn3y"]
 
 [node name="Node2D" type="Node2D" unique_id=1768938732]
 script = ExtResource("1_3cgs0")

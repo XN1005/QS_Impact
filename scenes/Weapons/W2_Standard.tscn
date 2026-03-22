@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c3ss7omuw73s3"]
 
-[ext_resource type="Script" uid="uid://3idkjkt4mabm" path="res://Weapons/w_2_standard.gd" id="1_43c3b"]
-[ext_resource type="Texture2D" uid="uid://bja4he1lwwbsj" path="res://Assets/Rifle_0.png" id="1_kutbb"]
-[ext_resource type="PackedScene" uid="uid://flxqin5ts0gt" path="res://Weapons/W2_Bullet.tscn" id="2_hy7ex"]
+[ext_resource type="Script" uid="uid://3idkjkt4mabm" path="res://scripts/Weapons/w_2_standard.gd" id="1_43c3b"]
+[ext_resource type="Texture2D" uid="uid://bja4he1lwwbsj" path="res://assets/Rifle_0.png" id="1_kutbb"]
+[ext_resource type="PackedScene" uid="uid://flxqin5ts0gt" path="res://scenes/Weapons/W2_Bullet.tscn" id="2_hy7ex"]
 
 [node name="Node2D" type="Node2D" unique_id=385477843]
 script = ExtResource("1_43c3b")
