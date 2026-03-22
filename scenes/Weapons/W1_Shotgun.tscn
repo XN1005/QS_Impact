@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://17msdsu1ooyd"]
+
+[ext_resource type="Script" uid="uid://or4xvhteo0wt" path="res://scripts/Weapons/w_1_shotgun.gd" id="1_3cgs0"]
+[ext_resource type="PackedScene" uid="uid://by6o05kjl0v55" path="res://scenes/Weapons/W1_Bullet.tscn" id="2_skn3y"]
+[ext_resource type="Texture2D" uid="uid://bhq6d5d5jg0u7" path="res://Assets/Staff_Weapon.png" id="3_skn3y"]
+[ext_resource type="Texture2D" uid="uid://dxyxk5uxdpi3h" path="res://Assets/Staff_Cast.png" id="4_5yavm"]
+
+[node name="Node2D" type="Node2D" unique_id=1768938732]
+script = ExtResource("1_3cgs0")
+bullet_scene = ExtResource("2_skn3y")
+
+[node name="Timer" type="Timer" parent="." unique_id=1088117666]
+
+[node name="StaffWeapon" type="Sprite2D" parent="." unique_id=199834685]
+position = Vector2(30.000011, -55.00001)
+scale = Vector2(0.23373288, 0.23373288)
+texture = ExtResource("3_skn3y")
+
+[node name="StaffCast" type="Sprite2D" parent="." unique_id=529324373]
+position = Vector2(59, -140)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("4_5yavm")
+
+[node name="Bullet Spawner" type="Marker2D" parent="." unique_id=1440048062]
+position = Vector2(59, -140)

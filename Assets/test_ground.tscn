@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dfhxxn757o3fw"]
+
+[ext_resource type="Texture2D" uid="uid://djnp6ulkckya6" path="res://assets/Untitled.png" id="1_mbbig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1xqa"]
+size = Vector2(1510, 96)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=41758239]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=713532795]
+shape = SubResource("RectangleShape2D_c1xqa")
+
+[node name="Untitled" type="Sprite2D" parent="." unique_id=1693074823]
+modulate = Color(0.29411766, 0.74509805, 1, 1)
+scale = Vector2(6.023437, 0.6292135)
+texture = ExtResource("1_mbbig")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1630882170]
+position = Vector2(71, -285)
