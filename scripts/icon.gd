@@ -49,7 +49,7 @@ func dash():
 	# no vertical movements while dashing
 	velocity.y = 0
 	velocity.x = dash_speed * face_right
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.4).timeout
 	is_dashing = false
 	
 	var after_dash_dir = Input.get_axis("ui_left", "ui_right")
@@ -58,7 +58,7 @@ func dash():
 	else:
 		velocity.x = 0
 	
-	await get_tree().create_timer(0.6).timeout # Wait 0.8 seconds to be able to dash again
+	await get_tree().create_timer(0.6).timeout # Wait 1.0 seconds to be able to dash again
 	can_dash = true
 
 func _ready():
@@ -98,7 +98,7 @@ func _physics_process(delta: float) -> void:
 	cast_cd.value += 100 * delta / shotgun_cd
 	
 	if current_sp < shield:	
-		current_sp += 0.3 * delta
+		current_sp += 1 * delta
 		sp_bar.value = current_sp
 		sp_display.text = "%.1f" % current_sp
 	

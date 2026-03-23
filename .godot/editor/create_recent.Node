@@ -1,2 +1,5 @@
-ProgressBar
+CollisionShape2D
+Camera2D
 TileMapLayer
+StaticBody2D
+ProgressBar
