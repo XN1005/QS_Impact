@@ -1,21 +1,82 @@
 [gd_scene format=3 uid="uid://c6lr8augrefpl"]
 
-[ext_resource type="Texture2D" uid="uid://cdujyv45j81ev" path="res://Assets/Enemies/Tech_Mecha.png" id="1_bwrco"]
+[ext_resource type="Script" uid="uid://ce01jdb4sadi1" path="res://scenes/Enemy/e_1_mecha.gd" id="1_8k05a"]
+[ext_resource type="Texture2D" uid="uid://cdujyv45j81ev" path="res://assets/Enemies/Tech_Mecha.png" id="1_bwrco"]
+[ext_resource type="Texture2D" uid="uid://crogrrs2sh7wp" path="res://assets/Animations/MechaAttack.png" id="2_1dbu5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4q45b"]
-radius = 3.35
-height = 20.4
+radius = 1.15
+height = 4.9999995
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvwoi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1dbu5")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bwrco")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8k05a"]
+radius = 350.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1dbu5"]
+radius = 65.03076
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dbu5"]
+bg_color = Color(0.3969905, 0.6874706, 0.25187606, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1957542900]
+scale = Vector2(2, 2)
+script = ExtResource("1_8k05a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1064553960]
 scale = Vector2(20, 20)
 shape = SubResource("CapsuleShape2D_4q45b")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1042022924]
-
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1734020861]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1062255913]
+scale = Vector2(0.18, 0.18)
+sprite_frames = SubResource("SpriteFrames_gvwoi")
+animation = &"dash"
 
 [node name="TechMecha" type="Sprite2D" parent="." unique_id=1007977115]
-scale = Vector2(0.6522411, 0.65224093)
+visible = false
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_bwrco")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1438329661]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1034560526]
+shape = SubResource("CircleShape2D_8k05a")
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=1432402988]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=2058175167]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_1dbu5")
+
+[node name="WindupTimer" type="Timer" parent="." unique_id=1278701355]
+
+[node name="DashTimer" type="Timer" parent="." unique_id=1025255504]
+
+[node name="RecoveryTimer" type="Timer" parent="." unique_id=1787490974]
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=230645539]
+offset_left = -64.5
+offset_top = 70.0
+offset_right = 64.5
+offset_bottom = 77.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1dbu5")
+show_percentage = false
+
+[connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]

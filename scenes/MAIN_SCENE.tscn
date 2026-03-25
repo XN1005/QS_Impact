@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://1l7qbjja6qsk" path="res://scenes/Enemy/E2_Robot.tscn" id="9_rpect"]
 [ext_resource type="Texture2D" uid="uid://ixl85jboeauf" path="res://assets/Tilemap/Wall.png" id="10_fueqa"]
 [ext_resource type="Texture2D" uid="uid://b5ejwytwjqqlt" path="res://assets/Tilemap/Breakable_Platform.png" id="11_ehwwu"]
+[ext_resource type="PackedScene" uid="uid://c6lr8augrefpl" path="res://scenes/Enemy/E1_Mecha.tscn" id="12_wwgyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yy10"]
 texture = ExtResource("7_vpn6i")
@@ -8239,7 +8240,7 @@ position = Vector2(790, 1835)
 position = Vector2(384, 648)
 
 [node name="Wall (Static)" parent="." unique_id=773038739 instance=ExtResource("3_ipxtu")]
-position = Vector2(4043, 1849)
+position = Vector2(4043, 1924)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1609645849]
 position = Vector2(234, 276)
@@ -8290,7 +8291,7 @@ tile_set = SubResource("TileSet_fueqa")
 position = Vector2(2959, 1821)
 
 [node name="Wall" type="Sprite2D" parent="." unique_id=264423666]
-position = Vector2(4051.125, 1859.4724)
+position = Vector2(4043.0002, 1944)
 scale = Vector2(0.3730911, 0.37309104)
 texture = ExtResource("10_fueqa")
 
@@ -8307,3 +8308,6 @@ texture = ExtResource("11_ehwwu")
 [node name="BreakablePlatform2" type="Sprite2D" parent="BreakablePlatform2" unique_id=164250898]
 position = Vector2(-4870, -3210)
 texture = ExtResource("11_ehwwu")
+
+[node name="CharacterBody2D3" parent="." unique_id=1957542900 instance=ExtResource("12_wwgyg")]
+position = Vector2(5575, 1892)

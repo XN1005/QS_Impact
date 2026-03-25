@@ -7,13 +7,13 @@ extends CharacterBody2D
 @export var dash_speed = 1000.0
 @export var jump_strength = -600.0
 @export var wall_jump_push = 250.0
+
 var current_hp = 50.0
 var current_sp = 35.0
 
 # World Stats
 var double_jump = 1
 const gravity = 2000.0
-
 # Weapons
 @onready var hp_bar = $HUD/HealthBar
 @onready var hp_display = $HUD/HealthBar/HealthDisplay
@@ -22,14 +22,18 @@ const gravity = 2000.0
 @onready var active_weapon = $W1_Shotgun
 @onready var side_weapon = $W2_Standard
 @onready var player_sprite = $PlayerSprite
+@onready var dash_cd = $HUD/DashCD
+@onready var cast_cd = $HUD/CastCD
 @export var shotgun_cd = 0.6
 @export var rifle_cd = 0.08
 @export var railgun_cd = 10.0
 @export var switch_weapon_cd = 2.0
 
+# die
+signal died
+
 # Miscellaneous
 @onready var animated_sprite = $AnimatedSprite2D
-var is_jumping = true
 var can_dash = true
 var is_dashing = false
 var direction
@@ -40,11 +44,12 @@ var face_right = 1
 func dash():
 	can_dash = false
 	is_dashing = true
-		
+	dash_cd.value = 0.0
+	
 	# no vertical movements while dashing
 	velocity.y = 0
 	velocity.x = dash_speed * face_right
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.4).timeout
 	is_dashing = false
 	
 	var after_dash_dir = Input.get_axis("ui_left", "ui_right")
@@ -53,7 +58,7 @@ func dash():
 	else:
 		velocity.x = 0
 	
-	await get_tree().create_timer(0.6).timeout # Wait 0.8 seconds to be able to dash again
+	await get_tree().create_timer(0.6).timeout # Wait 1.0 seconds to be able to dash again
 	can_dash = true
 
 func _ready():
@@ -61,6 +66,8 @@ func _ready():
 	player_sprite.visible = false
 	
 	# Make sure the health bar matches our variables right when the game boots up
+	cast_cd.value = 100.0
+	dash_cd.value = 100.0
 	hp_bar.max_value = health
 	hp_bar.value = current_hp
 	hp_display.text = "%.1f" % current_hp
@@ -83,14 +90,18 @@ func take_damage(dmg):
 		die()
 
 func die():
-	print("Game Over!")
+	died.emit()
+	queue_free()
 
 func _physics_process(delta: float) -> void:
+	# ----------------------- UI LOADING -----------------------
+	cast_cd.value += 100 * delta / shotgun_cd
+	
 	if current_sp < shield:	
-		current_sp += 0.3 * delta
+		current_sp += 1 * delta
 		sp_bar.value = current_sp
 		sp_display.text = "%.1f" % current_sp
-
+	
 	if direction == -1:
 		face_right = -1
 		player_sprite.flip_h = true
@@ -105,9 +116,8 @@ func _physics_process(delta: float) -> void:
 		active_weapon.scale.x = 1
 		active_weapon.position.x = 45.0
 		side_weapon.scale.x = 1
-		
-	# ----------------------- MOVEMENTS -----------------------
 	
+	# ----------------------- ANIMATION + MOVEMENTS -----------------------
 	if is_dashing:
 		animated_sprite.play("dash")
 		move_and_slide()
@@ -121,6 +131,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite.play("idle")
 
+	dash_cd.value += 180 * delta
 	# 1. GRAVITY
 	if not is_on_floor():
 		if is_on_wall() and velocity.y > 0:
@@ -136,15 +147,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = jump_strength
-		elif is_on_wall():
+		elif is_on_wall() and double_jump > 0:
 			# WALL JUMP
 			velocity.y = jump_strength
 			# Push them away from the wall
 			velocity.x = get_wall_normal().x * wall_jump_push
+			double_jump -= 1
 		elif double_jump > 0:
 			velocity.y = jump_strength
 			double_jump -= 1
-			
 
 	# 4. Smooth Horizontal Movement
 	direction = Input.get_axis("ui_left", "ui_right")
@@ -190,6 +201,7 @@ func _physics_process(delta: float) -> void:
 	elif can_shoot and active_weapon == $W1_Shotgun:
 		if Input.is_action_just_pressed("shoot"):
 			active_weapon.shoot()
+			cast_cd.value = 0.0
 			can_shoot = false
 			await get_tree().create_timer(shotgun_cd).timeout
 			can_shoot = true
