@@ -1,2 +1,2 @@
-res://scenes/Enemy/E1_Drone.tscn
-res://scenes/Enemy/E1_Mecha.tscn
+res://scenes/MAIN_SCENE.tscn
+res://main_scene.gd
