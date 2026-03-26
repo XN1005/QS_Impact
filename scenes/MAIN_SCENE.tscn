@@ -8643,82 +8643,82 @@ position = Vector2(645, 11956)
 position = Vector2(563, 13417)
 
 [node name="Wall2" type="Sprite2D" parent="." unique_id=1240287502]
-position = Vector2(-3589.5, 13786)
+position = Vector2(-3588.5, 13788)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall3" type="Sprite2D" parent="." unique_id=1473772242]
-position = Vector2(-2890.5, 13786)
+position = Vector2(-2889.5, 13788)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall4" type="Sprite2D" parent="." unique_id=569849607]
-position = Vector2(-2191, 13788)
+position = Vector2(-2190, 13790)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall5" type="Sprite2D" parent="." unique_id=2007149412]
-position = Vector2(-1492, 13788)
+position = Vector2(-1491, 13790)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall6" type="Sprite2D" parent="." unique_id=1903023639]
-position = Vector2(-789, 13789)
+position = Vector2(-788, 13791)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall7" type="Sprite2D" parent="." unique_id=857116348]
-position = Vector2(-90, 13789)
+position = Vector2(-89, 13791)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall8" type="Sprite2D" parent="." unique_id=539792771]
-position = Vector2(609.5, 13791)
+position = Vector2(610.5, 13793)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall9" type="Sprite2D" parent="." unique_id=622575935]
-position = Vector2(1308.5, 13791)
+position = Vector2(1309.5, 13793)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall10" type="Sprite2D" parent="." unique_id=1994589644]
-position = Vector2(2013, 13789)
+position = Vector2(2014, 13791)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall11" type="Sprite2D" parent="." unique_id=1422595683]
-position = Vector2(2712, 13789)
+position = Vector2(2713, 13791)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall12" type="Sprite2D" parent="." unique_id=1265073649]
-position = Vector2(3411.5, 13791)
+position = Vector2(3412.5, 13793)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall13" type="Sprite2D" parent="." unique_id=1263732905]
-position = Vector2(4110.5, 13791)
+position = Vector2(4111.5, 13793)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall14" type="Sprite2D" parent="." unique_id=487660233]
-position = Vector2(4813.5, 13792)
+position = Vector2(4814.5, 13794)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall15" type="Sprite2D" parent="." unique_id=1633816075]
-position = Vector2(5512.5, 13792)
+position = Vector2(5513.5, 13794)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall16" type="Sprite2D" parent="." unique_id=560715482]
-position = Vector2(6212, 13794)
+position = Vector2(6213, 13796)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
 [node name="Wall17" type="Sprite2D" parent="." unique_id=1090673274]
-position = Vector2(6911, 13794)
+position = Vector2(6912, 13796)
 rotation = -1.5707964
 texture = ExtResource("10_fueqa")
 
@@ -8854,33 +8854,33 @@ texture = ExtResource("10_fueqa")
 
 [node name="PlaceholderBg" type="Sprite2D" parent="." unique_id=120200347]
 z_index = -2
-position = Vector2(-2933, 12645)
+position = Vector2(-2894, 12656)
 texture = ExtResource("8_8yy10")
 
 [node name="PlaceholderBg2" type="Sprite2D" parent="." unique_id=860781375]
 z_index = -2
-position = Vector2(-880, 12646)
+position = Vector2(-841, 12657)
 scale = Vector2(-1, 1)
 texture = ExtResource("8_8yy10")
 
 [node name="PlaceholderBg3" type="Sprite2D" parent="." unique_id=1503759800]
 z_index = -2
-position = Vector2(1173, 12645)
+position = Vector2(1212, 12656)
 texture = ExtResource("8_8yy10")
 
 [node name="PlaceholderBg4" type="Sprite2D" parent="." unique_id=524116244]
 z_index = -2
-position = Vector2(3226, 12646)
+position = Vector2(3265, 12657)
 scale = Vector2(-1, 1)
 texture = ExtResource("8_8yy10")
 
 [node name="PlaceholderBg5" type="Sprite2D" parent="." unique_id=1376471910]
 z_index = -2
-position = Vector2(5274, 12645)
+position = Vector2(5313, 12656)
 texture = ExtResource("8_8yy10")
 
 [node name="PlaceholderBg6" type="Sprite2D" parent="." unique_id=1184298885]
 z_index = -2
-position = Vector2(7327, 12646)
+position = Vector2(7366, 12657)
 scale = Vector2(-1, 1)
 texture = ExtResource("8_8yy10")
