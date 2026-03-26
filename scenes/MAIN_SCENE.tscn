@@ -2,17 +2,19 @@
 
 [ext_resource type="Script" uid="uid://lp88fxew05ea" path="res://main_scene.gd" id="1_77cmg"]
 [ext_resource type="PackedScene" uid="uid://p8e8qwgigc2v" path="res://scenes/Player_Movement_Test.tscn" id="1_awche"]
-[ext_resource type="PackedScene" uid="uid://bamdb672knciu" path="res://Assets/wall_test.tscn" id="3_ipxtu"]
+[ext_resource type="PackedScene" uid="uid://bamdb672knciu" path="res://assets/wall_test.tscn" id="3_ipxtu"]
 [ext_resource type="PackedScene" uid="uid://detq8tdq7818t" path="res://scenes/pause_menu.tscn" id="4_a72qe"]
 [ext_resource type="PackedScene" uid="uid://c2640f1al8fmo" path="res://scenes/death_menu.tscn" id="5_3jhfm"]
-[ext_resource type="Texture2D" uid="uid://cyvwsauvyi17m" path="res://Assets/Dialogue_Box.png" id="6_wwgyg"]
+[ext_resource type="Texture2D" uid="uid://cyvwsauvyi17m" path="res://assets/Dialogue_Box.png" id="6_wwgyg"]
 [ext_resource type="Texture2D" uid="uid://vvk3gxhyonbi" path="res://icon.svg" id="7_djaow"]
-[ext_resource type="Texture2D" uid="uid://b20yqdqqcx4r1" path="res://Assets/Tilemap/Tile.jpg" id="7_vpn6i"]
-[ext_resource type="Texture2D" uid="uid://dvislrht4u0xa" path="res://Assets/Tilemap/placeholder_bg.png" id="8_8yy10"]
+[ext_resource type="Texture2D" uid="uid://b20yqdqqcx4r1" path="res://assets/Tilemap/Tile.jpg" id="7_vpn6i"]
+[ext_resource type="Texture2D" uid="uid://dvislrht4u0xa" path="res://assets/Tilemap/placeholder_bg.png" id="8_8yy10"]
 [ext_resource type="PackedScene" uid="uid://1l7qbjja6qsk" path="res://scenes/Enemy/E2_Robot.tscn" id="9_rpect"]
-[ext_resource type="Texture2D" uid="uid://ixl85jboeauf" path="res://Assets/Tilemap/Wall.png" id="10_fueqa"]
-[ext_resource type="Texture2D" uid="uid://b5ejwytwjqqlt" path="res://Assets/Tilemap/Breakable_Platform.png" id="11_ehwwu"]
+[ext_resource type="Texture2D" uid="uid://ixl85jboeauf" path="res://assets/Tilemap/Wall.png" id="10_fueqa"]
+[ext_resource type="Texture2D" uid="uid://b5ejwytwjqqlt" path="res://assets/Tilemap/Breakable_Platform.png" id="11_ehwwu"]
 [ext_resource type="PackedScene" uid="uid://c6lr8augrefpl" path="res://scenes/Enemy/E1_Mecha.tscn" id="12_wwgyg"]
+[ext_resource type="PackedScene" uid="uid://c688d11udtiqy" path="res://scenes/wall_testy.tscn" id="14_wjlro"]
+[ext_resource type="PackedScene" uid="uid://banycm5e38b06" path="res://scenes/block.tscn" id="15_ti87d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yy10"]
 texture = ExtResource("7_vpn6i")
@@ -8235,10 +8237,10 @@ sources/0 = SubResource("TileSetAtlasSource_rpect")
 script = ExtResource("1_77cmg")
 
 [node name="CharacterBody2D" parent="." unique_id=720078412 instance=ExtResource("1_awche")]
-position = Vector2(790, 1835)
+position = Vector2(-2825, 13534)
 
 [node name="Wall (Static)" parent="." unique_id=773038739 instance=ExtResource("3_ipxtu")]
-position = Vector2(4043, 1924)
+position = Vector2(4041, 1924)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1609645849]
 position = Vector2(234, 276)
@@ -8324,7 +8326,7 @@ tile_set = SubResource("TileSet_fueqa")
 position = Vector2(2959, 1821)
 
 [node name="Wall" type="Sprite2D" parent="." unique_id=264423666]
-position = Vector2(4043.0002, 1944)
+position = Vector2(4040, 1942)
 scale = Vector2(0.3730911, 0.37309104)
 texture = ExtResource("10_fueqa")
 
@@ -8346,3 +8348,153 @@ texture = ExtResource("11_ehwwu")
 position = Vector2(5575, 1892)
 
 [node name="Timer" type="Timer" parent="." unique_id=1144062886]
+
+[node name="Node2D" parent="." unique_id=1800643789 instance=ExtResource("14_wjlro")]
+position = Vector2(115, 1791)
+scale = Vector2(10, 10)
+
+[node name="Map" type="Node2D" parent="." unique_id=1114564217]
+
+[node name="MainFloor" type="Node2D" parent="Map" unique_id=1420586544]
+position = Vector2(23, 0)
+
+[node name="Block" parent="Map/MainFloor" unique_id=1389788055 instance=ExtResource("15_ti87d")]
+position = Vector2(-763.0001, 13707)
+scale = Vector2(15, 1)
+
+[node name="Block3" parent="Map/MainFloor" unique_id=557831323 instance=ExtResource("15_ti87d")]
+position = Vector2(-823, 11574)
+scale = Vector2(15, 1)
+
+[node name="Block2" parent="Map/MainFloor" unique_id=1394810462 instance=ExtResource("15_ti87d")]
+position = Vector2(4746, 13707)
+scale = Vector2(10, 1)
+
+[node name="Block4" parent="Map/MainFloor" unique_id=1575341735 instance=ExtResource("15_ti87d")]
+position = Vector2(4704, 11579)
+scale = Vector2(10, 1)
+
+[node name="MainWall" type="Node2D" parent="Map" unique_id=1967873837]
+position = Vector2(-1010, 1646)
+
+[node name="Block5" parent="Map/MainWall" unique_id=1889176491 instance=ExtResource("15_ti87d")]
+position = Vector2(-2990, 10987)
+rotation = 1.5707964
+scale = Vector2(5, 1)
+
+[node name="Block7" parent="Map/MainWall" unique_id=1740941738 instance=ExtResource("15_ti87d")]
+position = Vector2(7952, 10913.001)
+rotation = 1.5707964
+scale = Vector2(5, 1)
+
+[node name="Block" parent="Map" unique_id=182654831 instance=ExtResource("15_ti87d")]
+position = Vector2(-2016, 13364)
+
+[node name="Block5" parent="Map" unique_id=531155929 instance=ExtResource("15_ti87d")]
+position = Vector2(-1482, 12451)
+
+[node name="Block17" parent="Map" unique_id=585422398 instance=ExtResource("15_ti87d")]
+position = Vector2(-1036, 13341)
+
+[node name="Block18" parent="Map" unique_id=1089713120 instance=ExtResource("15_ti87d")]
+position = Vector2(-629, 12977)
+
+[node name="Block20" parent="Map" unique_id=322200211 instance=ExtResource("15_ti87d")]
+position = Vector2(2399, 13295)
+
+[node name="Block30" parent="Map" unique_id=1547196161 instance=ExtResource("15_ti87d")]
+position = Vector2(3788, 13295)
+
+[node name="Block32" parent="Map" unique_id=916249326 instance=ExtResource("15_ti87d")]
+position = Vector2(4375, 12908)
+
+[node name="Block33" parent="Map" unique_id=571079546 instance=ExtResource("15_ti87d")]
+position = Vector2(5182, 12908)
+
+[node name="Block31" parent="Map" unique_id=1858401235 instance=ExtResource("15_ti87d")]
+position = Vector2(5784, 13295)
+
+[node name="Block21" parent="Map" unique_id=2000451699 instance=ExtResource("15_ti87d")]
+position = Vector2(1940, 12863)
+
+[node name="Block22" parent="Map" unique_id=1077310982 instance=ExtResource("15_ti87d")]
+position = Vector2(693, 12296)
+
+[node name="Block23" parent="Map" unique_id=304971089 instance=ExtResource("15_ti87d")]
+position = Vector2(693, 12687)
+
+[node name="Block19" parent="Map" unique_id=140348874 instance=ExtResource("15_ti87d")]
+position = Vector2(-629, 12577)
+
+[node name="Block13" parent="Map" unique_id=1297761030 instance=ExtResource("15_ti87d")]
+position = Vector2(622, 13106)
+scale = Vector2(3, 1)
+
+[node name="Block14" parent="Map" unique_id=886145108 instance=ExtResource("15_ti87d")]
+position = Vector2(2063, 12444)
+scale = Vector2(3, 1)
+
+[node name="Block6" parent="Map" unique_id=339680242 instance=ExtResource("15_ti87d")]
+position = Vector2(-2178, 13210)
+rotation = 1.5707964
+
+[node name="Block7" parent="Map" unique_id=505897201 instance=ExtResource("15_ti87d")]
+position = Vector2(-2758, 13106)
+
+[node name="Block8" parent="Map" unique_id=364802479 instance=ExtResource("15_ti87d")]
+position = Vector2(-3220, 12747)
+rotation = -3.1415927
+
+[node name="Block9" parent="Map" unique_id=2080220214 instance=ExtResource("15_ti87d")]
+position = Vector2(-2534, 12459)
+
+[node name="Block12" parent="Map" unique_id=304840491 instance=ExtResource("15_ti87d")]
+position = Vector2(-2061, 12043)
+
+[node name="Block10" parent="Map" unique_id=1300360618 instance=ExtResource("15_ti87d")]
+position = Vector2(-3715, 12459)
+
+[node name="Block2" parent="Map" unique_id=53223715 instance=ExtResource("15_ti87d")]
+position = Vector2(-1326, 13429)
+rotation = 1.5707964
+
+[node name="Block3" parent="Map" unique_id=1657633623 instance=ExtResource("15_ti87d")]
+position = Vector2(-1326, 13037)
+rotation = 1.5707964
+
+[node name="Block4" parent="Map" unique_id=1821090645 instance=ExtResource("15_ti87d")]
+position = Vector2(-1326, 12609)
+rotation = 1.5707964
+
+[node name="Block24" parent="Map" unique_id=1225519022 instance=ExtResource("15_ti87d")]
+position = Vector2(-99, 12954)
+rotation = 1.5707964
+
+[node name="Block25" parent="Map" unique_id=1715537845 instance=ExtResource("15_ti87d")]
+position = Vector2(-99, 12562)
+rotation = 1.5707964
+
+[node name="Block26" parent="Map" unique_id=2131068932 instance=ExtResource("15_ti87d")]
+position = Vector2(-99, 12134)
+rotation = 1.5707964
+
+[node name="Block27" parent="Map" unique_id=1662079250 instance=ExtResource("15_ti87d")]
+position = Vector2(2668, 13419)
+rotation = 1.5707964
+
+[node name="Block28" parent="Map" unique_id=1968808944 instance=ExtResource("15_ti87d")]
+position = Vector2(2668, 13027)
+rotation = 1.5707964
+
+[node name="Block29" parent="Map" unique_id=2037247291 instance=ExtResource("15_ti87d")]
+position = Vector2(2668, 12599)
+rotation = 1.5707964
+
+[node name="CharacterBody2D4" parent="." unique_id=572716887 instance=ExtResource("12_wwgyg")]
+position = Vector2(2433, 12696)
+
+[node name="CharacterBody2D5" parent="." unique_id=1650650023 instance=ExtResource("12_wwgyg")]
+position = Vector2(683, 12006)
+
+[node name="CharacterBody2D6" parent="." unique_id=1915508897 instance=ExtResource("9_rpect")]
+position = Vector2(612, 13440)

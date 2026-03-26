@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var shield = 35.0
 @export var speed = 300.0
 @export var dash_speed = 1000.0
-@export var jump_strength = -600.0
+@export var jump_strength = -750.0
 @export var wall_jump_push = 250.0
 
 var current_hp = 50.0
@@ -160,7 +160,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_strength
 		elif is_on_wall() and double_jump > 0:
 			# WALL JUMP
-			velocity.y = jump_strength
+			velocity.y = jump_strength * 1.2
 			# Push them away from the wall
 			velocity.x = get_wall_normal().x * wall_jump_push
 			double_jump -= 1
