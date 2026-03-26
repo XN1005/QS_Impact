@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cskfpgq25qfyl"]
+
+[ext_resource type="Texture2D" uid="uid://baei4v3lttt3s" path="res://Assets/Enemies/Tech_Drone.png" id="1_s8x45"]
+[ext_resource type="Script" uid="uid://qaaf20suswbt" path="res://scenes/Enemy/e_3_drone.gd" id="1_x06hv"]
+[ext_resource type="PackedScene" uid="uid://hxldqwb46jqe" path="res://Assets/Enemies/Enemy_Shot.tscn" id="2_swejm"]
+[ext_resource type="Texture2D" uid="uid://b5ml7swy8x5e" path="res://Assets/Animations/Drone_Shooting.png" id="2_x06hv"]
+[ext_resource type="Texture2D" uid="uid://d2oay7cvwtnew" path="res://Assets/boom.png" id="5_2ontl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s8x45"]
+radius = 259.99997
+height = 794.28564
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_swejm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s8x45")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x06hv")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8x45"]
+radius = 57.251064
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1262384605]
+script = ExtResource("1_x06hv")
+bullet_scene = ExtResource("2_swejm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219900664]
+position = Vector2(0, 20.999998)
+scale = Vector2(0.35, 0.35)
+shape = SubResource("CapsuleShape2D_s8x45")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=356043573]
+offset_left = -123.0
+offset_top = -181.55
+offset_right = 124.0
+offset_bottom = -161.0
+show_percentage = false
+
+[node name="TechDrone" type="AnimatedSprite2D" parent="." unique_id=1671532546]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_swejm")
+animation = &"new_animation"
+
+[node name="DetectionZone" type="Area2D" parent="." unique_id=2139698410]
+position = Vector2(138, -34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=711075139]
+position = Vector2(-137.99998, 34.999996)
+scale = Vector2(20, 20)
+shape = SubResource("CircleShape2D_s8x45")
+debug_color = Color(0, 0.6, 0.69803923, 0.043137256)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1202192870]
+
+[node name="ShootPoint" type="Marker2D" parent="." unique_id=288073074]
+position = Vector2(138, -34)
+
+[node name="Boom" type="Sprite2D" parent="." unique_id=78959123]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_2ontl")
+
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

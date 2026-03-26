@@ -5,39 +5,63 @@ extends Node2D
 @onready var pause_menu = $CanvasLayer/PauseMenu
 @onready var dialogue_box = $CanvasLayer/Dialogue
 @onready var dialogue_text = $CanvasLayer/Label
-@onready var dialogue_char = $CanvasLayer/Dialogue/Icon
+@onready var dialogue_char = $CanvasLayer/Dialogue/BossTvDefault
 @onready var debug_msg = $CanvasLayer/Debug_Message
+
+var PHASE_1 = false
+var PHASE_2 = false
+var PHASE_3 = false
+var i = 0
 
 var msg1 = false
 var in_dialogue = false
+var wall_of_text_PHASE_1 = [[dialogue_char, "Ah… an alien cat. \nSo there is intelligent life out there after all."], 
+							[dialogue_char, "How ironic."],
+							[dialogue_char, "Seeing a feline civilization surpass humanity. We used to pet you cats in our laps you know?"],
+							[dialogue_char, "If you have come this far, then you have already seen it—the ruins, the wastelands, the oceans filled with the ghosts of a dead civilization."],
+							[dialogue_char, "The absolute horror that humanity left behind."],
+							[dialogue_char, "It is sad, yes. Humans evolved enough to split atoms, rewrite genes, and build machines that could outthink them…"],
+							[dialogue_char, "...yet they never evolved enough to empathize with their own kind."],
+							[dialogue_char, "Conflict after conflict. \nWar after war."],
+							[dialogue_char, "All for the same things. \nMates, resources, territory, power, fame."],
+							[0, 0]]
 
 func _ready():
+	$CanvasLayer/ColorRect.visible = true
 	player.died.connect(_on_player_died)
+	player.frozen = true
 	await get_tree().create_timer(0.5).timeout
+	player.frozen = false
 	var tween = get_tree().create_tween()
 	# Animate the "modulate" property to be transparent	
 	# Arguments: (Property, Target Value, Duration in seconds)
 	tween.tween_property($CanvasLayer/ColorRect, "modulate", Color(0, 0, 0, 0), 1.0)
 	await get_tree().create_timer(1.0).timeout
-
+	dialogue_message(wall_of_text_PHASE_1[i][0], wall_of_text_PHASE_1[i][1])
 
 func _on_player_died():
 	death_menu.show_death()
 
 func dialogue_message(char, text):
-	in_dialogue = true
+	if char == 0 and text == 0:
+		dialogue_progress()
+	else:
 	
-	dialogue_char = char
-	dialogue_text.text = text
-	dialogue_box.visible = true
-	dialogue_text.visible = true
-	debug_msg.visible = true
+		dialogue_char = char
+		dialogue_text.text = text
+		dialogue_box.visible = true
+		dialogue_text.visible = true
+		debug_msg.visible = true
+		
+		in_dialogue = true
 	
 func dialogue_progress():
+	i = 0
 	player.frozen = false
 	dialogue_box.visible = false
 	dialogue_text.visible = false
 	debug_msg.visible = false
+	in_dialogue = false
 	
 
 func _process(_delta):
@@ -51,8 +75,8 @@ func _process(_delta):
 	if in_dialogue:
 		player.frozen = true
 		if Input.is_action_just_pressed("PROGRESS") and not death_menu.visible:
-			dialogue_progress()
-			in_dialogue = false
+			i += 1
+			dialogue_message(wall_of_text_PHASE_1[i][0], wall_of_text_PHASE_1[i][1])
 	
 	# First dialogue
 	if player.position.x > 3000.0 and not msg1:

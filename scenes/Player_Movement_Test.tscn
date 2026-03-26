@@ -10,53 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://4eo4ai0xfqao" path="res://Assets/Animations/J2.png" id="6_dor35"]
 [ext_resource type="Texture2D" uid="uid://bqkg6i54sy5mo" path="res://Assets/Press_E_to_Dash.png" id="6_f1p60"]
 [ext_resource type="Texture2D" uid="uid://btnr0ctb4wc4a" path="res://Speed.png" id="6_thq6h"]
-[ext_resource type="Texture2D" uid="uid://d0trtklqp0g83" path="res://Assets/Staff_Icon.png" id="7_7bliq"]
-[ext_resource type="Texture2D" uid="uid://s8pk6b41wpcw" path="res://Assets/Shoot_Instruction.png" id="7_fgm48"]
+[ext_resource type="Texture2D" uid="uid://dfkxyjykn7sao" path="res://Assets/812196.png" id="9_hcvj1"]
 [ext_resource type="Texture2D" uid="uid://cpvb0wxiu2q3v" path="res://Assets/Animations/J5.png" id="10_5mh8h"]
 [ext_resource type="Texture2D" uid="uid://dembrgthysfbm" path="res://Assets/Animations/Sprinting_Anim.png" id="12_hcvj1"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bksix"]
-bg_color = Color(0.9224991, 0, 0.26437932, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.6835285, 0.12679732, 0.9999998, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qsbf"]
-bg_color = Color(0.6541432, 0.7554598, 0.88107765, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0.9093756, 0.93869543, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i08gw"]
-bg_color = Color(0.88354266, 0.8454577, 0.99588925, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgm48"]
-bg_color = Color(0.6787332, 0.8938107, 0.99999994, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.9105962, 0.7145055, 1, 1)
-border_blend = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ipxb"]
-size = Vector2(79, 178)
+[ext_resource type="Texture2D" uid="uid://dmrqbn4npd4v3" path="res://Assets/LMB.png" id="12_s33ly"]
+[ext_resource type="Texture2D" uid="uid://cpeok7q0nka12" path="res://Assets/RMB.png" id="14_r84eb"]
+[ext_resource type="Texture2D" uid="uid://peg5wp2n1g7o" path="res://Assets/SWAP_WEAPONS.png" id="15_uegan"]
+[ext_resource type="Texture2D" uid="uid://c80yn52v5ehgw" path="res://Assets/Stamina.png" id="16_rp8j1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_thq6h"]
 atlas = ExtResource("5_boojc")
@@ -129,6 +89,63 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ipxb"]
+size = Vector2(79, 178)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bksix"]
+bg_color = Color(0.9224991, 0, 0.26437932, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.68235296, 0.1254902, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qsbf"]
+bg_color = Color(0.6541432, 0.7554598, 0.88107765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.9093756, 0.93869543, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i08gw"]
+bg_color = Color(0.88354266, 0.8454577, 0.99588925, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgm48"]
+bg_color = Color(0.6787332, 0.8938107, 0.99999994, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.9105962, 0.7145055, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s33ly"]
+bg_color = Color(0.94509804, 1, 0.45490196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.90291613, 0.80714977, 0.039067924, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=720078412 groups=["Player"]]
 script = ExtResource("2_0ipxb")
 
@@ -141,63 +158,75 @@ visible = false
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_0qsbf")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2005082149]
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_0kcfe")
+animation = &"sprint"
+frame_progress = 0.46174014
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551339865]
+position = Vector2(14.5, 38)
+shape = SubResource("RectangleShape2D_0ipxb")
+
+[node name="Timer" type="Timer" parent="CollisionShape2D" unique_id=298870830]
+
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1931990353]
 
 [node name="HealthBar" type="ProgressBar" parent="HUD" unique_id=195959826]
-offset_left = 101.0
-offset_top = 13.0
-offset_right = 568.0
-offset_bottom = 68.0
+offset_left = 77.0
+offset_top = 18.0
+offset_right = 399.65454
+offset_bottom = 56.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_bksix")
 show_percentage = false
 
 [node name="49WcXf" type="Sprite2D" parent="HUD/HealthBar" unique_id=2015591631]
-position = Vector2(-50.999992, 28.999996)
-scale = Vector2(0.268, 0.268)
+position = Vector2(-40, 24.000004)
+scale = Vector2(0.19799998, 0.19799998)
 texture = ExtResource("2_tcn2r")
 
 [node name="HealthDisplay" type="Label" parent="HUD/HealthBar" unique_id=1751896634]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 88.0
-offset_bottom = 57.0
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 59.10714
+offset_bottom = 41.0
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 25
 text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ShieldBar" type="ProgressBar" parent="HUD" unique_id=280481797]
-offset_left = 102.0
-offset_top = 81.0
-offset_right = 566.0
-offset_bottom = 136.0
+offset_left = 75.0
+offset_top = 76.0
+offset_right = 400.0
+offset_bottom = 112.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_0qsbf")
 show_percentage = false
 
 [node name="Shield" type="Sprite2D" parent="HUD/ShieldBar" unique_id=1860690874]
-position = Vector2(-52, 24)
-scale = Vector2(0.25792506, 0.25792506)
+position = Vector2(-38, 21)
+scale = Vector2(0.18948129, 0.18948127)
 texture = ExtResource("3_0qsbf")
 
 [node name="ShieldDisplay" type="Label" parent="HUD/ShieldBar" unique_id=1633349058]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 88.0
-offset_bottom = 57.0
+offset_left = -19.0
+offset_top = -10.0
+offset_right = 67.0
+offset_bottom = 46.0
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 25
 text = "35"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DashCD" type="ProgressBar" parent="HUD" unique_id=1113847568]
-offset_left = 861.0
-offset_top = 561.0
-offset_right = 927.0
-offset_bottom = 627.0
+offset_left = 876.0
+offset_top = 543.0
+offset_right = 946.0
+offset_bottom = 613.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_i08gw")
 fill_mode = 3
 show_percentage = false
@@ -220,29 +249,45 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_fgm48")
 fill_mode = 3
 show_percentage = false
 
-[node name="ShootInstruction" type="Sprite2D" parent="HUD/CastCD" unique_id=148146616]
-self_modulate = Color(0.7480997, 0.7480997, 0.7480996, 1)
-z_index = 20
-position = Vector2(2, -2)
-scale = Vector2(0.08984375, 0.08984375)
-texture = ExtResource("7_fgm48")
+[node name="Lmb" type="Sprite2D" parent="HUD/CastCD" unique_id=1066584099]
+position = Vector2(-3, -2)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_s33ly")
 
 [node name="StaffIcon" type="Sprite2D" parent="HUD/CastCD" unique_id=1084846539]
 position = Vector2(67.99997, 67.99997)
-scale = Vector2(0.28930825, 0.28930825)
-texture = ExtResource("7_7bliq")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_hcvj1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551339865]
-position = Vector2(14.5, 38)
-shape = SubResource("RectangleShape2D_0ipxb")
+[node name="SwapCD" type="ProgressBar" parent="HUD" unique_id=825894586]
+offset_left = 1031.0
+offset_top = 387.0
+offset_right = 1101.0
+offset_bottom = 457.0
+show_percentage = false
 
-[node name="Timer" type="Timer" parent="CollisionShape2D" unique_id=298870830]
+[node name="Rmb" type="Sprite2D" parent="HUD/SwapCD" unique_id=462646774]
+position = Vector2(5, -7)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("14_r84eb")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2005082149]
-scale = Vector2(0.45, 0.45)
-sprite_frames = SubResource("SpriteFrames_0kcfe")
-animation = &"sprint"
-frame_progress = 0.46174014
+[node name="SwapWeapons" type="Sprite2D" parent="HUD/SwapCD" unique_id=86279681]
+position = Vector2(36, 34.00003)
+scale = Vector2(0.1015625, 0.1015625)
+texture = ExtResource("15_uegan")
+
+[node name="StaminaBar" type="ProgressBar" parent="HUD" unique_id=760277243]
+offset_left = 73.0
+offset_top = 133.0
+offset_right = 399.0
+offset_bottom = 160.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_s33ly")
+show_percentage = false
+
+[node name="Stamina" type="Sprite2D" parent="HUD/StaminaBar" unique_id=1896786736]
+position = Vector2(-35, 17)
+scale = Vector2(0.014199998, 0.016523635)
+texture = ExtResource("16_rp8j1")
 
 [node name="W2_Standard" parent="." unique_id=385477843 instance=ExtResource("4_bksix")]
 position = Vector2(69, 6)

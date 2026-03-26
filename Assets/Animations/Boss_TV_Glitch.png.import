@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbltspqts4oea"
-path="res://.godot/imported/Rifle_Bullet.png-2f5c2943f9bbee78ee3387fbdbe71cb4.ctex"
+uid="uid://dyw63rjaa1jj3"
+path="res://.godot/imported/Boss_TV_Glitch.png-01c3cf39274a412ec755864401f86464.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Rifle_Bullet.png"
-dest_files=["res://.godot/imported/Rifle_Bullet.png-2f5c2943f9bbee78ee3387fbdbe71cb4.ctex"]
+source_file="res://Assets/Animations/Boss_TV_Glitch.png"
+dest_files=["res://.godot/imported/Boss_TV_Glitch.png-01c3cf39274a412ec755864401f86464.ctex"]
 
 [params]
 

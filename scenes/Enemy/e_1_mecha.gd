@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 # -------------- STATS --------------
-@export var max_hp = 100.0
-var current_hp = 100.0
+@export var max_hp = 300.0
+var current_hp = 300.0
 
-@export var move_speed = 200.0
-@export var dash_speed = 500.0
-@export var detection_range = 1000.0
+@export var move_speed = 300.0
+@export var dash_speed = 800.0
+@export var detection_range = 1400.0
 @export var attack_range = 600.0
 @export var windup_time = 1.0
 @export var dash_time = 1.0

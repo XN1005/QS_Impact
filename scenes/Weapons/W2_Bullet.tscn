@@ -1,21 +1,60 @@
 [gd_scene format=3 uid="uid://flxqin5ts0gt"]
 
-[ext_resource type="Texture2D" uid="uid://bbltspqts4oea" path="res://Assets/Rifle_Bullet.png" id="1_ri66v"]
-[ext_resource type="Script" uid="uid://cw8046lfxpb5d" path="res://Weapons/w_2_bullet.gd" id="1_tm77e"]
+[ext_resource type="Script" uid="uid://cw8046lfxpb5d" path="res://scripts/Weapons/w_2_bullet.gd" id="1_tm77e"]
+[ext_resource type="Texture2D" uid="uid://md3emkigx22c" path="res://Assets/Animations/W2_Bullet.png" id="2_fycio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tm77e"]
-size = Vector2(36, 10)
+size = Vector2(59, 30)
 
-[node name="Standard Bullet" type="Area2D" unique_id=1680799299]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d3ji"]
+atlas = ExtResource("2_fycio")
+region = Rect2(0, 0, 333, 298)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gjbo"]
+atlas = ExtResource("2_fycio")
+region = Rect2(333, 0, 333, 298)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l8fg"]
+atlas = ExtResource("2_fycio")
+region = Rect2(666, 0, 333, 298)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bhjk"]
+atlas = ExtResource("2_fycio")
+region = Rect2(999, 0, 333, 298)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d8blk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d3ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gjbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1l8fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bhjk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Standard Bullet" type="Area2D" unique_id=1680799299 groups=["Bullet"]]
 script = ExtResource("1_tm77e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=602156180]
+position = Vector2(10.5, 0)
 shape = SubResource("RectangleShape2D_tm77e")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2070301065]
 
-[node name="RifleBullet" type="Sprite2D" parent="." unique_id=894927479]
-scale = Vector2(0.09375001, 0.09375001)
-texture = ExtResource("1_ri66v")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1348336133]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_d8blk")
+frame_progress = 0.29349965
+flip_h = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

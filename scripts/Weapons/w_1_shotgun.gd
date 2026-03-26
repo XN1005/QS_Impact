@@ -13,15 +13,6 @@ func _ready():
 
 func _process(delta: float) -> void:
 	mouse_pos = get_global_mouse_position()
-	
-	# 1. Point the entire Weapon node directly at the mouse
-	# look_at(mouse_pos)
-	
-	# 2. Prevent the gun from looking upside down!
-	#if mouse_pos.x < global_position.x:
-		#scale.y = -1
-	#else:
-		#scale.y = 1
 
 func cast():
 	cast_effect.visible = true
@@ -33,11 +24,9 @@ func cast():
 	
 	# 1. Enlarge: Scale from current size to 3x over 1.5 seconds
 	tween.tween_property(cast_effect, "scale", Vector2(0.2, 0.2), 0.3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	print("scaled")
 	
 	# 2. Fade Away: Change alpha to 0 over 1.5 seconds
 	tween.tween_property(cast_effect, "modulate:a", 0.0, 0.3)
-	print("faded")
 	
 	await tween.finished
 	# Optional: Delete the object automatically when finished

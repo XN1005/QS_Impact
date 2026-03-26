@@ -7,7 +7,10 @@ extends CharacterBody2D
 @export var dash_speed = 1000.0
 @export var jump_strength = -750.0
 @export var wall_jump_push = 250.0
+@export var w1_stam_cost = 9.0
+@export var w2_stam_cost = 7.0
 
+var stamina = 100.0
 var current_hp = 50.0
 var current_sp = 35.0
 
@@ -15,6 +18,7 @@ var current_sp = 35.0
 var double_jump = 1
 const gravity = 2000.0
 # Weapons
+@onready var stam_bar = $HUD/StaminaBar
 @onready var hp_bar = $HUD/HealthBar
 @onready var hp_display = $HUD/HealthBar/HealthDisplay
 @onready var sp_bar = $HUD/ShieldBar
@@ -25,7 +29,7 @@ const gravity = 2000.0
 @onready var dash_cd = $HUD/DashCD
 @onready var cast_cd = $HUD/CastCD
 @export var shotgun_cd = 0.6
-@export var rifle_cd = 0.08
+@export var rifle_cd = 0.45
 @export var railgun_cd = 10.0
 @export var switch_weapon_cd = 2.0
 
@@ -77,7 +81,8 @@ func _ready():
 	sp_bar.max_value = shield
 	sp_bar.value = current_sp
 	sp_display.text = "%.1f" % current_sp
-	# (If you kept your weapon list code in _ready, keep it here too!)
+	
+	stam_bar.value = stamina
 
 func take_damage(dmg):
 	current_sp -= dmg
@@ -104,9 +109,13 @@ func _physics_process(delta: float) -> void:
 	cast_cd.value += 100 * delta / shotgun_cd
 	
 	if current_sp < shield:	
-		current_sp += 1 * delta
+		current_sp += 1.2 * delta
 		sp_bar.value = current_sp
 		sp_display.text = "%.1f" % current_sp
+	
+	if stamina < 100.0:	
+		stamina += 1.8 * delta
+		stam_bar.value = stamina
 	
 	if direction == -1:
 		face_right = -1
@@ -158,12 +167,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = jump_strength
-		elif is_on_wall() and double_jump > 0:
+		elif is_on_wall():
 			# WALL JUMP
 			velocity.y = jump_strength * 1.2
 			# Push them away from the wall
 			velocity.x = get_wall_normal().x * wall_jump_push
-			double_jump -= 1
 		elif double_jump > 0:
 			velocity.y = jump_strength
 			double_jump -= 1
@@ -195,22 +203,29 @@ func _physics_process(delta: float) -> void:
 		if active_weapon == $W1_Shotgun:
 			active_weapon = $W2_Standard
 			side_weapon = $W1_Shotgun
+			cast_cd.max_value = 100.0 * (rifle_cd / shotgun_cd)
+			cast_cd.value = cast_cd.max_value
 		else:
 			active_weapon = $W1_Shotgun
 			side_weapon = $W2_Standard
+			cast_cd.max_value = 100.0
+			cast_cd.value = cast_cd.max_value
 		
 		await get_tree().create_timer(switch_weapon_cd).timeout
 		can_switch = true
 		
 		
 	if can_shoot and active_weapon == $W2_Standard:
-		if Input.is_action_pressed("shoot"):
+		if Input.is_action_just_pressed("shoot") and stamina >= w2_stam_cost:
+			stamina -= w2_stam_cost
 			active_weapon.shoot()
+			cast_cd.value = 0.0
 			can_shoot = false
 			await get_tree().create_timer(rifle_cd).timeout
 			can_shoot = true
 	elif can_shoot and active_weapon == $W1_Shotgun:
-		if Input.is_action_just_pressed("shoot"):
+		if Input.is_action_just_pressed("shoot") and stamina >= w1_stam_cost:
+			stamina -= w1_stam_cost
 			active_weapon.shoot()
 			cast_cd.value = 0.0
 			can_shoot = false

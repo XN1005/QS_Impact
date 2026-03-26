@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dembrgthysfbm"
-path="res://.godot/imported/Sprinting_Anim.png-fa90972f29c0673875b9f0a635deb5de.ctex"
+path="res://.godot/imported/Sprinting_Anim.png-b8028370057919e5682e263bf9e96221.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Animations/Sprinting_Anim.png"
-dest_files=["res://.godot/imported/Sprinting_Anim.png-fa90972f29c0673875b9f0a635deb5de.ctex"]
+source_file="res://Assets/Animations/Sprinting_Anim.png"
+dest_files=["res://.godot/imported/Sprinting_Anim.png-b8028370057919e5682e263bf9e96221.ctex"]
 
 [params]
 

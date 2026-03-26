@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var bullet_time = 0.5
-@export var speed = 1800
+@export var speed = 1400
 
 func _ready():
 	await get_tree().create_timer(bullet_time).timeout

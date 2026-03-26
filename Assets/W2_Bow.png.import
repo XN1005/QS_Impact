@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0trtklqp0g83"
-path="res://.godot/imported/Staff_Icon.png-b9c0fb8fee83282f672c8fe375b856ea.ctex"
+uid="uid://dpd17w0ge6ofm"
+path="res://.godot/imported/W2_Bow.png-6be3d31f4a3d0aef25294ea045413f81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Staff_Icon.png"
-dest_files=["res://.godot/imported/Staff_Icon.png-b9c0fb8fee83282f672c8fe375b856ea.ctex"]
+source_file="res://Assets/W2_Bow.png"
+dest_files=["res://.godot/imported/W2_Bow.png-6be3d31f4a3d0aef25294ea045413f81.ctex"]
 
 [params]
 
