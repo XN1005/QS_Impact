@@ -109,19 +109,19 @@ func _physics_process(delta: float) -> void:
 	cast_cd.value += 100 * delta / shotgun_cd
 	
 	if current_sp < shield:	
-		current_sp += 1.2 * delta
+		current_sp += 2.4 * delta
 		sp_bar.value = current_sp
 		sp_display.text = "%.1f" % current_sp
 	
 	if stamina < 100.0:
 		if stamina == 0:
-			stamina += 3.0 * delta
+			stamina += 1.0 * delta
 			stam_bar.value = stamina
 		elif 0.0 < stamina and stamina < 50.0:
-			stamina += 4.5 * delta
+			stamina += 2.5 * delta
 			stam_bar.value = stamina
 		elif 50.0 < stamina and stamina < 100.0:
-			stamina += 6.0 * delta
+			stamina += 4.0 * delta
 			stam_bar.value = stamina
 	
 	if direction == -1:
