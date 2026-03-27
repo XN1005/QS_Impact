@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpeok7q0nka12"
-path="res://.godot/imported/RMB.png-80e1fe23160bd04ec1179e7884927327.ctex"
+path="res://.godot/imported/RMB.png-27d58016e94e9787fbf7777a8fedfa24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/RMB.png"
-dest_files=["res://.godot/imported/RMB.png-80e1fe23160bd04ec1179e7884927327.ctex"]
+source_file="res://assets/RMB.png"
+dest_files=["res://.godot/imported/RMB.png-27d58016e94e9787fbf7777a8fedfa24.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5ml7swy8x5e"
-path="res://.godot/imported/Drone_Shooting.png-2cffc20291040d1cba8b3779cad6bfe2.ctex"
+path="res://.godot/imported/Drone_Shooting.png-416034ff3592f786d01a76606e14bc8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Drone_Shooting.png"
-dest_files=["res://.godot/imported/Drone_Shooting.png-2cffc20291040d1cba8b3779cad6bfe2.ctex"]
+source_file="res://assets/Animations/Drone_Shooting.png"
+dest_files=["res://.godot/imported/Drone_Shooting.png-416034ff3592f786d01a76606e14bc8c.ctex"]
 
 [params]
 

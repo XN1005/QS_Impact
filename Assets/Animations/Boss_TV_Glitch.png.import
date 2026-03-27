@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyw63rjaa1jj3"
-path="res://.godot/imported/Boss_TV_Glitch.png-01c3cf39274a412ec755864401f86464.ctex"
+path="res://.godot/imported/Boss_TV_Glitch.png-235c963dc7c45dcc6582a487b67bc0a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Boss_TV_Glitch.png"
-dest_files=["res://.godot/imported/Boss_TV_Glitch.png-01c3cf39274a412ec755864401f86464.ctex"]
+source_file="res://assets/Animations/Boss_TV_Glitch.png"
+dest_files=["res://.godot/imported/Boss_TV_Glitch.png-235c963dc7c45dcc6582a487b67bc0a7.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chw3vtgrfi7ys"
-path="res://.godot/imported/Boss_TV_default.png-28ffb6324db377a5ee1b440f5c493474.ctex"
+path="res://.godot/imported/Boss_TV_default.png-8a392e84860880b6f0b8e4903a4f2244.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Boss_TV_default.png"
-dest_files=["res://.godot/imported/Boss_TV_default.png-28ffb6324db377a5ee1b440f5c493474.ctex"]
+source_file="res://assets/Animations/Boss_TV_default.png"
+dest_files=["res://.godot/imported/Boss_TV_default.png-8a392e84860880b6f0b8e4903a4f2244.ctex"]
 
 [params]
 

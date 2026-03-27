@@ -31,7 +31,7 @@ const gravity = 2000.0
 @export var shotgun_cd = 0.6
 @export var rifle_cd = 0.45
 @export var railgun_cd = 10.0
-@export var switch_weapon_cd = 2.0
+@export var switch_weapon_cd = 1.0
 
 # die
 signal died

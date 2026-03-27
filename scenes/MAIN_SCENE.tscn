@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://lp88fxew05ea" path="res://main_scene.gd" id="1_77cmg"]
 [ext_resource type="PackedScene" uid="uid://p8e8qwgigc2v" path="res://scenes/Player_Movement_Test.tscn" id="1_awche"]
-[ext_resource type="PackedScene" uid="uid://bamdb672knciu" path="res://Assets/wall_test.tscn" id="3_ipxtu"]
+[ext_resource type="PackedScene" uid="uid://bamdb672knciu" path="res://assets/wall_test.tscn" id="3_ipxtu"]
 [ext_resource type="PackedScene" uid="uid://detq8tdq7818t" path="res://scenes/pause_menu.tscn" id="4_a72qe"]
 [ext_resource type="PackedScene" uid="uid://c2640f1al8fmo" path="res://scenes/death_menu.tscn" id="5_3jhfm"]
-[ext_resource type="Texture2D" uid="uid://cyvwsauvyi17m" path="res://Assets/Dialogue_Box.png" id="6_wwgyg"]
-[ext_resource type="Texture2D" uid="uid://chw3vtgrfi7ys" path="res://Assets/Animations/Boss_TV_default.png" id="7_tvogl"]
-[ext_resource type="Texture2D" uid="uid://b20yqdqqcx4r1" path="res://Assets/Tilemap/Tile.jpg" id="7_vpn6i"]
-[ext_resource type="Texture2D" uid="uid://dvislrht4u0xa" path="res://Assets/Tilemap/placeholder_bg.png" id="8_8yy10"]
+[ext_resource type="Texture2D" uid="uid://cyvwsauvyi17m" path="res://assets/Dialogue_Box.png" id="6_wwgyg"]
+[ext_resource type="Texture2D" uid="uid://chw3vtgrfi7ys" path="res://assets/Animations/Boss_TV_default.png" id="7_tvogl"]
+[ext_resource type="Texture2D" uid="uid://b20yqdqqcx4r1" path="res://assets/Tilemap/Tile.jpg" id="7_vpn6i"]
+[ext_resource type="Texture2D" uid="uid://dvislrht4u0xa" path="res://assets/Tilemap/placeholder_bg.png" id="8_8yy10"]
 [ext_resource type="PackedScene" uid="uid://1l7qbjja6qsk" path="res://scenes/Enemy/E2_Robot.tscn" id="9_rpect"]
-[ext_resource type="Texture2D" uid="uid://ixl85jboeauf" path="res://Assets/Tilemap/Wall.png" id="10_fueqa"]
-[ext_resource type="Texture2D" uid="uid://b5ejwytwjqqlt" path="res://Assets/Tilemap/Breakable_Platform.png" id="11_ehwwu"]
+[ext_resource type="Texture2D" uid="uid://ixl85jboeauf" path="res://assets/Tilemap/Wall.png" id="10_fueqa"]
+[ext_resource type="Texture2D" uid="uid://b5ejwytwjqqlt" path="res://assets/Tilemap/Breakable_Platform.png" id="11_ehwwu"]
 [ext_resource type="PackedScene" uid="uid://c6lr8augrefpl" path="res://scenes/Enemy/E1_Mecha.tscn" id="12_wwgyg"]
 [ext_resource type="PackedScene" uid="uid://c688d11udtiqy" path="res://scenes/wall_testy.tscn" id="14_wjlro"]
 [ext_resource type="PackedScene" uid="uid://banycm5e38b06" path="res://scenes/block.tscn" id="15_ti87d"]
@@ -8248,6 +8248,7 @@ position = Vector2(4041, 1924)
 position = Vector2(234, 276)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2080469048]
+layer = 3
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=726140704]
 visible = false
