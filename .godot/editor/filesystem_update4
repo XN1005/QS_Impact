@@ -1,2 +1,5 @@
 res://scenes/pause_menu.tscn
 res://scenes/MAIN_SCENE.tscn
+res://scenes/Enemy/E2_Robot.tscn
+res://scenes/Enemy/e_2_robot.gd
+res://icon.gd

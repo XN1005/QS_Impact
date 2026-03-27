@@ -31,7 +31,7 @@ const gravity = 2000.0
 @export var shotgun_cd = 0.6
 @export var rifle_cd = 0.45
 @export var railgun_cd = 10.0
-@export var switch_weapon_cd = 1.0
+@export var switch_weapon_cd = 0.5
 
 # die
 signal died
@@ -113,9 +113,16 @@ func _physics_process(delta: float) -> void:
 		sp_bar.value = current_sp
 		sp_display.text = "%.1f" % current_sp
 	
-	if stamina < 100.0:	
-		stamina += 1.8 * delta
-		stam_bar.value = stamina
+	if stamina < 100.0:
+		if stamina == 0:
+			stamina += 3.0 * delta
+			stam_bar.value = stamina
+		elif 0.0 < stamina and stamina < 50.0:
+			stamina += 4.5 * delta
+			stam_bar.value = stamina
+		elif 50.0 < stamina and stamina < 100.0:
+			stamina += 6.0 * delta
+			stam_bar.value = stamina
 	
 	if direction == -1:
 		face_right = -1

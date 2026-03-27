@@ -126,19 +126,22 @@ func _physics_process(delta: float) -> void:
 		"CHASE":
 			anim.play("idle")
 			if player != null:
-				# 1. Check if we are close enough to attack!
 				var distance = global_position.distance_to(player.global_position)
 				
 				if distance <= attack_range:
-					slash(attack_power) # Trigger the attack
+					velocity.x = 0 # STOP horizontal movement to attack
+					slash(attack_power)
 				else:
-					# Otherwise, keep moving toward the player
 					var direction = global_position.direction_to(player.global_position)
+					# Only care about left/right
 					if direction.x > 0:
 						anim.flip_h = true
+						velocity.x = speed
 					else:
 						anim.flip_h = false
-					velocity = direction * speed
+						velocity.x = -speed
+			else:
+				velocity.x = 0 # STOP if player is gone
 					
 		"ATTACK":
 			# 2. Stop moving while attacking so we don't slide into the player
